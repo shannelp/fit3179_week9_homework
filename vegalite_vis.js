@@ -74,4 +74,6 @@ var vg_1 = {
   ]
 };
 
-vegaEmbed("#fnb_map", vg_1).catch(console.error);
+window.addEventListener("DOMContentLoaded", function () {
+  vegaEmbed("#fnb_map", vg_1).catch(console.error);
+});
