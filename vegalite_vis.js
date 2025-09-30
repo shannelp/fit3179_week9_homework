@@ -1,9 +1,13 @@
 var vg_1 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 760,
-  "height": 520,
+  "width": 1000,
+  "height": 600,
   "background": "white",
 
+  "config": {
+  "view": { "stroke": null } // remove outer border
+  },
+  
   "data": {
     "url": "https://raw.githubusercontent.com/shannelp/vegadata/refs/heads/main/malaysia_fnb_points.csv"
   },
