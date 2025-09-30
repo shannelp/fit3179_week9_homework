@@ -46,7 +46,7 @@ var vg_1 = {
       "mark": {
         "type": "geoshape",
         "fill": null,
-        "stroke": "#9abead",
+        "stroke": "#c4d6ce",
         "strokeWidth": 0.6
       },
       "encoding": { "shape": { "field": "geometry", "type": "geojson" } }
