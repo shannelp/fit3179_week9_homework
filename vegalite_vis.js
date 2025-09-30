@@ -5,15 +5,14 @@ var vg_1 = {
   "background": "white",
 
   "config": {
-    "view": { "stroke": null }   // remove outer border
+    "view": { "stroke": null } // remove outer border
   },
 
   "projection": {
     "type": "mercator",
-    // Tighter framing to avoid excess whitespace
-    "center": [111, 3.8],
-    "scale": 2600,
-    "translate": [460, 300]      // nudge the map into the visual center
+    "center": [110.5, 2.5],
+    "scale": 3000,
+    "translate": [480, 300]
   },
 
   "layer": [
@@ -40,23 +39,23 @@ var vg_1 = {
       "encoding": { "shape": { "field": "geometry", "type": "geojson" } }
     },
 
-    // graticule (kept light)
+    // graticule
     {
       "data": { "graticule": { "extent": [[95, -1], [121, 8]], "step": [2, 2] } },
       "mark": { "type": "geoshape", "stroke": "#b7cfdb", "strokeWidth": 1, "fill": null }
     },
 
-    // business points
+    // business points with region legend
     {
       "data": {
         "url": "https://raw.githubusercontent.com/shannelp/vegadata/refs/heads/main/malaysia_fnb_points.csv"
       },
-      "mark": { "type": "circle", "opacity": 0.9 },
+      "mark": { "type": "circle", "opacity": 0.85, "stroke": "white", "strokeWidth": 0.6 },
       "encoding": {
         "longitude": { "field": "longitude", "type": "quantitative" },
         "latitude":  { "field": "latitude",  "type": "quantitative" },
-        "size": { "value": 28 },
-        "color": { "value": "steelblue" },
+        "size": { "value": 40 },
+        "color": { "field": "region", "type": "nominal", "legend": { "title": "Region" } },
         "tooltip": [
           { "field": "name", "title": "Business" },
           { "field": "locality", "title": "Locality" },
