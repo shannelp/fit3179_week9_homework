@@ -5,7 +5,7 @@ var vg_1 = {
   "background": "white",
 
   "config": {
-  "view": { "stroke": null } // remove outer border
+    "view": { "stroke": null } // remove outer border
   },
   
   "data": {
@@ -27,14 +27,16 @@ var vg_1 = {
   "projection": { "type": "mercator", "center": [109.4, 4], "scale": 2100 },
 
   "layer": [
-    { "data": { "sphere": {} }, "mark": { "type": "geoshape", "fill": "#000000" }},
+    // sphere: no fill so it won't look like a border at the edges
+    { "data": { "sphere": {} }, "mark": { "type": "geoshape", "fill": null }},
 
+    // Malaysia outline: softer stroke so it doesn't read as a frame
     {
       "data": {
         "url": "https://raw.githubusercontent.com/shannelp/vegadata/refs/heads/main/malaysia.geojson",
         "format": { "type": "json", "property": "features" }
       },
-      "mark": { "type": "geoshape", "fill": "#ffffff", "stroke": "black", "strokeWidth": 1 },
+      "mark": { "type": "geoshape", "fill": "#ffffff", "stroke": "#5f6f64", "strokeWidth": 1 },
       "encoding": { "shape": { "field": "geometry", "type": "geojson" } }
     },
 
